@@ -21,10 +21,10 @@ Route::get('/about', function () {
     return view('about', [
         "name" => "Diki Rahman",
         "email" => "dikirahman.me@gmail.com",
-        "image" => "diki.jpg"
+        "image" => "diki.png"
     ]);
 });
 
-Route::get('/posts', function () {
+Route::get('/blog', function () {
     return view('posts');
 });
