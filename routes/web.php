@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,19 +32,7 @@ Route::get('/about', function () {
 
 
 
-Route::get('/blog', function () {
-    
-    return view('posts', [
-        "title" => "Post",
-        "posts" => Post::all()
-    ]);
-});
+Route::get('/blog', [PostController::class, 'index']);
 
 // halamn single post
-Route::get('post/{slug}', function($slug) {
-     
-    return view('post', [
-        "title" => "Single Post",
-        "post" => Post::find($slug)
-    ]);
-});
+Route::get('post/{slug}', [PostController::class, 'show']);
