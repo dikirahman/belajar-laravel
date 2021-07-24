@@ -18,7 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        "name" => "Diki Rahman",
+        "email" => "dikirahman.me@gmail.com",
+        "image" => "diki.jpg"
+    ]);
 });
 
 Route::get('/posts', function () {
